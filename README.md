@@ -10,7 +10,7 @@ To install the app on your local machine, follow these steps:
 
 **Clone the repository:**
 
-git clone https://github.com/<your-username>/<your-repository>.git
+git clone https://github.com/
 
 **Install the dependencies:**
 
