@@ -1,27 +1,84 @@
-# Form reviewer
+**Job Letter Sender App**
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.2.
+The Job Letter Sender App is a web application built with Angular that allows users to send job letters on why they are the best candidates for a job. The app also has a login option for administrators to view the forms and rate them with stars. The app uses Angular Material for styling and tailwind CSS for additional CSS.
 
-## Development server
+**Getting Started**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+**Installation**
 
-## Code scaffolding
+To install the app on your local machine, follow these steps:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**Clone the repository:**
 
-## Build
+git clone https://github.com/<your-username>/<your-repository>.git
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+**Install the dependencies:**
 
-## Running unit tests
+npm install
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+**Running the App**
 
-## Running end-to-end tests
+To run the app on your local machine, follow these steps:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+**Navigate to the app directory:**
 
-## Further help
+**cd job-letter-sender**
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+**Run the app:**
+
+ng serve
+
+Open your web browser and go to http://localhost:4200/.
+
+**Usage**
+
+User View
+
+The user view of the app allows users to send job letters on why they are the best candidates. To use the app as a user, follow these steps:
+
+Navigate to the app home page.
+Click on the "Send Job Letter" button.
+Fill out the form with your personal details, job details, and job letter content.
+Click on the "Submit" button to send your job letter.
+
+**Admin View**
+
+The admin view of the app allows administrators to view the job letters and rate them with stars. To use the app as an admin, follow these steps:
+
+Navigate to the app home page.
+Click on the "Admin Login" button.
+Enter the admin username and password.
+Click on the "Login" button.
+Click on the "View Job Letters" button to view the job letters.
+Rate the job letters with stars by clicking on the stars next to each job letter.
+
+**Architecture**
+The app is built using the following technologies:
+
+**Angular**
+
+The app is built using the Angular framework. Angular is a TypeScript-based open-source web application framework led by the Angular Team at Google and by a community of individuals and corporations.
+
+**Angular Material**
+
+The app uses Angular Material for styling. Angular Material is a UI component library for Angular that provides a set of reusable, well-tested, and accessible UI components based on Google's Material Design.
+
+**Tailwind CSS**
+
+The app uses Tailwind CSS for additional CSS. Tailwind CSS is a utility-first CSS framework for rapid UI development.
+
+**Router**
+
+The app uses the Angular Router to enable navigation between different views. The Angular Router is a powerful and flexible module that provides a route service that allows the app to navigate from one component to another.
+
+**WindowRefService**
+
+The app uses the WindowRefService to access the global window object in a way that is safe for server-side rendering. The WindowRefService is a service that provides access to the window object in a way that is easy to test and safe for server-side rendering.
+
+**ReactiveForms**
+
+The app uses ReactiveForms to build the form for sending job letters. ReactiveForms is a way to build complex, dynamic forms in Angular. ReactiveForms makes it easy to handle complex form validation, and makes it easy to add and remove form fields dynamically.
+
+**Conclusion**
+
+The Job Letter Sender App is a web application built with Angular that allows users to send job letters on why they are the best candidates for a job. The app also has a login option for administrators to view the forms and rate them with stars. The app uses Angular Material for styling and tailwind CSS for additional CSS. The app
