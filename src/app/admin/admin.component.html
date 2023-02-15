@@ -1,0 +1,86 @@
+<ng-container *ngIf="jeAdmin">
+
+<div class="flex flex-wrap justify-center h-full content-center">
+    <div class="admin-container w-11/12 h-4/5" >
+
+
+   <div class="login-info pl-10 pt-10">
+       <h1 class="text-sky-700">PREJETE VLOGE</h1>
+   </div>
+ 
+   <ng-container *ngFor="let form of forms.slice(selectedIndexes, selectedIndexes + (window.innerWidth < 1024 ? 1 : 2)); let i = index">
+ <div class="flex justify-center pb-10 h-4/5 lg:h-auto">
+   <div class="vloga-container flex flex-wrap flex-col justify-around w-11/12 lg:flex-row lg:justify-between ">
+
+      <div class="flex flex-col  w-full lg:w-7/12 lg:ml-10 lg:mt-7">
+        <div class="podatki flex flex-row w-full justify-between pl-3 pr-3 lg:p-0">
+          
+            <div class="">
+                <h1 class="opisFont text-sky-400">Ime</h1>
+               <h1 class="opisFont bold pr-3 lg:pb-8 lg:pt-2">{{form.firstName}}</h1>
+             </div>
+             <div class="">
+                <h1 class="opisFont text-sky-400  ">Priimek</h1>
+                <h1 class="opisFont bold pr-3 lg:pt-2">{{form.lastName}}</h1>
+             </div>
+             <div class="pl-2">
+                <h1 class="opisFont text-sky-400 ">Naslov</h1>
+                <h1 class="opisFont bold lg:pt-2">{{form.address}}</h1>
+             </div>
+           
+        </div>
+        <div class="oceniVlogo h-full flex flex-wrap flex-col justify-center content-center text-center  lg:flex-row  lg:justify-start lg:h-2/4 lg:content-center">
+          <div class="oceniVlogo flex flex-wrap flex-col justify-center content-center text-center lg:flex-row ">
+            <h1 class="text-sky-400 pt-2">Oceni Vlogo</h1>
+            <div class="ocena flex flex-wrap flex-row lg:justify-center lg:content-center">
+              <div *ngFor="let star of rangeStars; let j = index" class="stars ml-2">
+                <img src="{{ getStarSrc(i, j, selectedIndexes) }}" (click)="rate(i, j, selectedIndexes)">
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full mt-2 mb-2 lg:w-4/12 lg:mt-7 ">
+        <div class="opis flex flex-wrap flex-col content-center">
+          
+        <h1 class="opisFont text-sky-400 text-center lg:text-left lg:pl-5">Opis</h1>
+        <div class="opisRazlog h-36 w-full pl-2 pr-2 lg:pl-5 xl:h-48">
+        <h1 class=" bold lg:pt-2 lg:pr-5">{{form.reason}}</h1>
+      </div>
+        </div>
+      </div>
+    
+
+   </div>
+</div>
+</ng-container>
+
+
+<ng-container *ngIf="numOfPages >= (window.innerWidth < 1024 ? 1 : 2)">
+<div class="index-of-page flex justify-end">
+    <img src="assets/arrowleft.svg" (click)="pageDown()" class="mt-3"/>
+    <div *ngFor="let item of range; let i = index" class="paginacija p-2 mb-0">
+      <h1 (click)="selectedPage = i; addIndex(i)" [style.color]="selectedPage === i ? 'skyblue' : 'black'">{{i + 1}}</h1>
+    </div>
+    <img src="assets/arrowright.svg" (click)="pageUp()" class="mt-3"/>
+  </div>
+</ng-container>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+  
+</div>
+</div>
+
+</ng-container>

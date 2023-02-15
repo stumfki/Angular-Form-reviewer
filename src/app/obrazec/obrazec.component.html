@@ -1,0 +1,97 @@
+
+<ng-container *ngIf="!vlogaOddana">
+  <div class="flex flex-wrap h-full flex-col justify-center content-center">
+<form [formGroup]="vloga" class="form-container flex justify-center" (ngSubmit)="saveForm()">
+
+    <mat-card class="w-4/5">
+      <mat-card-header class="flex flex-wrap flex-col content-center text-center mt-2">
+        <mat-card-title class="text-sky-500 text-2xl p-2">ODAJA VLOGE</mat-card-title>
+        <div class="w-3/4">
+        <p class="text-stone-500 p-3">Izpolnite spodnja polja in oddajte vlogo, če se želite potegovati za izbrano delovno mesto.</p>
+      </div>
+      </mat-card-header>
+
+      <mat-card-content class="w-full">
+
+        <div class="w-full">
+
+          
+            <div class="w-full h-17 p-3 pb-0" >
+                <input formControlName="firstName" required matInput placeholder="Ime" class="border-2 border-sky-300 w-full p-2"
+                [ngClass]="{ 'red-input': vloga.get('firstName')?.invalid && vloga.get('firstName')?.touched }">
+              
+            </div>
+     
+
+     
+            <div class="w-full h-17 p-3 pb-0">
+              <input  formControlName="lastName" required matInput placeholder="Priimek" class="border-2 border-sky-300 w-full p-2"
+              [ngClass]="{ 'red-input': vloga.get('lastName')?.invalid && vloga.get('lastName')?.touched }">
+            </div>
+
+
+  
+            <div class="w-full h-17 p-3">
+              <input  formControlName="address" required matInput placeholder="Naslov" class="border-2 border-sky-300 w-full p-2"
+              [ngClass]="{ 'red-input': vloga.get('address')?.invalid && vloga.get('address')?.touched }">
+            </div>
+    
+
+        </div>
+
+        <div class="">
+          
+            <div class="w-full h-60 p-3">
+                <textarea  formControlName="reason" required matInput placeholder="Zakaj ste vi najbolj primerni za izbrano delo" class="border-2 border-sky-300 w-full p-2 h-52"
+                [ngClass]="{ 'red-input': vloga.get('reason')?.invalid && vloga.get('reason')?.touched }"></textarea>
+            </div>
+         
+
+        </div>
+
+        <mat-card-actions class="flex justify-center w-full">
+            <button mat-raised-button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            [disabled]="vloga.invalid">ODDAJ</button>
+          
+          </mat-card-actions>
+ 
+      </mat-card-content>
+
+      
+
+    </mat-card>
+  </form>
+  <div class="prijavaKotAdministrator text-white underline pt-3 flex justify-center">
+    <a [href]="isAdmin ? '/admin' : '/login'">Prijavi se kot administrator</a>
+  </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="vlogaOddana">
+
+    <div class="flex flex-wrap flex-col justify-center h-full content-center">
+     <div class="uspesno-oddano-container ml-5 mr-5 w-auto h-auto xl:w-1/4 xl:h-2/4 md:w-2/4 lg:w-3/4">
+
+    <div class="flex justify-center 2xl:pt-5">
+    <img src="assets/check.svg"/>
+    </div>
+
+    <div class="flex flex-wrap flex-col justify-center content-center text-center">
+      <div class="flex flex-wrap flex-col justify-center content-center w-3/4 md:w-2/4 lg:w-3/4">
+        <h1 class="text-sky-500  p-2 pt-2">VLOGA USPEŠNO ODDANA</h1>
+        <p class="text-stone-500  2xl:pt-2  ">Vaša vloga je bila oddana v preverjanje. Po pregledu Vas bodo naši uslužbenci o rezultatu obvestili preko elektronske pošte, ki je navedena v vašem uporabniškem profilu.</p>
+      </div>
+    </div>
+
+    <div class=" flex justify-center pb-10 xl:pt-0 2xl:pt-5">
+        <button (click)="ponovnoOddaj()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4  rounded w-3/4 md:w-2/4 lg:w-3/4">NOVA ODDAJA</button>
+    </div>
+
+    </div>
+    <div class="prijavaKotAdministrator text-white underline pt-3 flex justify-center">
+        <a [href]="isAdmin ? '/admin' : '/login'">Prijavi se kot administrator</a>
+      </div>
+</div>
+
+
+</ng-container>

@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base
+@tailwind components
+@tailwind utilities
+
+html, body
+  height: 100%
+  background: rgb(83, 182, 207)
+  background: linear-gradient(180deg, rgba(83, 182, 207, 1) 0%, rgba(84, 148, 207, 1) 100%)
+
+
+
+.mat-mdc-form-field-infix
+  padding-top: 0px !important
+  padding-bottom: 0px !important
+
+.mat-mdc-text-field-wrapper:not(.mdc-text-field--outlined)
+  & .mat-mdc-form-field-infix
+    padding-top: 0px
+    padding-bottom: 0px
+
+
+
+input:focus 
+  border-color: #003366 !important
